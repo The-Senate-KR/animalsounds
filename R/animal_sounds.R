@@ -9,8 +9,8 @@
 #' @export
 #'
 #' @examples animal_sounds("cow", "moo")
-animal_sounds <- function(animal, sound){
-  if(!rlang::is_character(animal, n = 1)){
+animal_sounds <- function(animal = NULL, sound = NULL){
+  if(!rlang::is_character(animal, n = 1) & !is.null(animal)){
     cli::cli_abort(
       c("{.var animal} must be a single string!",
         "i" = "It was {.type {animal}} of length {length(animal)} instead.",
@@ -18,7 +18,7 @@ animal_sounds <- function(animal, sound){
       class = "error_not_single_string"
     )
   }
-  if(!rlang::is_character(sound, n = 1)){
+  if(!rlang::is_character(sound, n = 1) & !is.null(sound)){
     cli::cli_abort(
       c("{.var sound} must be a single string!",
         "i" = "It was {.type {sound}} of length {length(sound)} instead.",
@@ -26,5 +26,16 @@ animal_sounds <- function(animal, sound){
       class = "error_not_single_string"
     )
   }
-  paste0("The ", animal, " says ", sound, "!")
+  if(!is.null(animal) & !is.null(sound)){
+    paste0("The ", animal, " says ", sound, "!")
+  }
+  else if(!is.null(animal)){
+    paste0("The ", animal, " makes no sound.")
+  }
+  else if(!is.null(sound)){
+    paste0("Nothing goes ", sound, ".")
+  }
+  else{
+    paste0("Nothing makes no sound.")
+  }
 }

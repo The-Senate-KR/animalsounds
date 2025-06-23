@@ -4,7 +4,7 @@
 \alias{animal_sounds}
 \title{Check Animal Sounds}
 \usage{
-animal_sounds(animal, sound)
+animal_sounds(animal = NULL, sound = NULL)
 }
 \arguments{
 \item{animal}{The animal that you're trying to work the sound out for.}
