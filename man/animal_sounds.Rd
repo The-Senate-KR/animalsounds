@@ -15,7 +15,7 @@ animal_sounds(animal, sound)
 Returns a sentence to the effect of "The cow says moo!"
 }
 \description{
-A function which allows you to vibe out whether various animals make a sound of your choice. This relies upon you having a vague awareness of what each animal sounds like.
+A function which allows you to vibe out whether various animals make a sound of your choice. This relies upon you having a vague awareness of what each animal sounds like. Makes use of the \code{\link[base:paste]{base::paste0()}} function to put \emph{everything} together (it's \strong{basically} a wrapper).
 }
 \examples{
 animal_sounds("cow", "moo")
