@@ -1,11 +1,10 @@
 Package: animalsounds
-Title: What the Package Does (One Line, Title Case)
+Title: Toy Package for Beginner Development
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Tudor", "Onose", , "Tudor.onose@warwick.ac.uk", role = c("aut", "cre"))
+Description: A package containing a toy model, allowing the user to check whether animals make various sounds. Essentially a glorified paste0 wrapper with no actual use beyond didactics.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
