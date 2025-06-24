@@ -13,7 +13,6 @@ URL: https://github.com/The-Senate-KR/animalsounds
 BugReports: https://github.com/The-Senate-KR/animalsounds/issues
 Imports: 
     cli,
-    purrr,
     rlang
 Suggests: 
     testthat (>= 3.0.0)
