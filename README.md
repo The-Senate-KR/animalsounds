@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/The-Senate-KR/animalsounds/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/The-Senate-KR/animalsounds/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of animalsounds is to demonstrate how to make a very very basic
