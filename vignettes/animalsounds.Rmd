@@ -1,0 +1,24 @@
+---
+title: "A Toy Package for Development Teaching"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{animalsounds}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Very little to say here lorem ipsum lorem ipsum lorem ipsum.
+
+Here's how to use it:
+
+```{r setup}
+library(animalsounds)
+animal_sounds("cow", "baaah")
+```
