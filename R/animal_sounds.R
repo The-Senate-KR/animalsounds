@@ -10,22 +10,8 @@
 #'
 #' @examples animal_sounds("cow", "moo")
 animal_sounds <- function(animal = NULL, sound = NULL){
-  if(!rlang::is_character(animal, n = 1) & !is.null(animal)){
-    cli::cli_abort(
-      c("{.var animal} must be a single string!",
-        "i" = "It was {.type {animal}} of length {length(animal)} instead.",
-        "i" = "You typed {animal}"),
-      class = "error_not_single_string"
-    )
-  }
-  if(!rlang::is_character(sound, n = 1) & !is.null(sound)){
-    cli::cli_abort(
-      c("{.var sound} must be a single string!",
-        "i" = "It was {.type {sound}} of length {length(sound)} instead.",
-        "i" = "You typed {sound}"),
-      class = "error_not_single_string"
-    )
-  }
+  check_arg(animal)
+  check_arg(sound)
   if(!is.null(animal) & !is.null(sound)){
     paste0("The ", animal, " says ", sound, "!")
   }
@@ -37,5 +23,17 @@ animal_sounds <- function(animal = NULL, sound = NULL){
   }
   else{
     paste0("Nothing makes no sound.")
+  }
+}
+
+check_arg <- function(arg, n = 1){
+  if(!rlang::is_character(arg, n = n) & !is.null(arg)){
+    cli::cli_abort(
+      c("{.var {rlang::caller_arg(arg)}} must be a single string!", # {rlang::caller_arg(arg)} - fetches the name of the actual variable that takes arg's place
+        "i" = "It was {.type {arg}} of length {length(arg)} instead.",
+        "i" = "You typed {arg}"),
+      class = "error_not_single_string",
+      call = rlang::caller_env() # takes the function that called check_arg
+    )
   }
 }
